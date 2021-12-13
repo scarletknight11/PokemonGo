@@ -31,8 +31,10 @@ public class MonsterSpawner : MonoBehaviour {
 
         spawnedMonster = Instantiate(selectedPrefab, position, Quaternion.identity);
 
-        FindObjectOfType<ARPlaneManager>().subsystem.Stop();
         spawnAudioSource.Play();
+
+        FindObjectOfType<ARPlaneManager>().subsystem.Stop();
+
     }
 
     public static void MonsterCapture()

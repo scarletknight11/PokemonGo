@@ -8,7 +8,7 @@ public class Monster : MonoBehaviour {
     public float captureChance = 0.8f;
     public Sprite portraitSprite;
     public Animator animator;
-    public AudioSource capturedAudioSource;
+    public AudioSource captureAudioSource;
 
     private Transform cameraTransform;
 
@@ -36,10 +36,11 @@ public class Monster : MonoBehaviour {
         if(Random.value > captureChance)
         {
             return;
+            animator.SetTrigger("Captured");
         }
 
         animator.SetTrigger("Captured");
-        capturedAudioSource.Play();
+        captureAudioSource.Play();
     }
 
     public void OnCaptureAnimationFinished()

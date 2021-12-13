@@ -322,11 +322,11 @@ GameObject:
   - component: {fileID: 3361834574544056098}
   - component: {fileID: 8667052616836904280}
   - component: {fileID: 7005968468383977281}
-  - component: {fileID: 4891187116634689876}
   - component: {fileID: 5394286177479458451}
+  - component: {fileID: 862697840674015469}
   m_Layer: 0
   m_Name: Free Burrow
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -385,7 +385,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!82 &4891187116634689876
+--- !u!114 &5394286177479458451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2732684518155842968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f2dfdc027ee3441aa3ad8b2f12dedc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  captureChance: 0.8
+  portraitSprite: {fileID: 21300000, guid: d27b3d9ef8eeced4aab716c9977958ec, type: 3}
+  animator: {fileID: 8667052616836904280}
+  captureAudioSource: {fileID: 862697840674015469}
+--- !u!82 &862697840674015469
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -395,8 +411,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 3af6202aacbcc734a9d4fe52f440807b, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -481,22 +497,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5394286177479458451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2732684518155842968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f2dfdc027ee3441aa3ad8b2f12dedc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  captureChance: 0.8
-  portraitSprite: {fileID: 21300000, guid: d27b3d9ef8eeced4aab716c9977958ec, type: 3}
-  animator: {fileID: 8667052616836904280}
-  capturedAudioSource: {fileID: 4891187116634689876}
 --- !u!1 &2748282422418694191
 GameObject:
   m_ObjectHideFlags: 0
