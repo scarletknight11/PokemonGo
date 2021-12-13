@@ -8,6 +8,8 @@ public class Ball : MonoBehaviour {
     public Rigidbody rd;
     public AudioSource hitAudioSource;
     private float ballLifeTime = 1.5f;
+    int counter = 0;
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -24,6 +26,17 @@ public class Ball : MonoBehaviour {
         rd.angularVelocity = Vector3.zero;
 
         transform.LookAt(collision.transform);
+        countball();
+    }
+
+    public void countball()
+    {
+        counter += 1;
+
+        if (counter >= 4)
+        {
+
+        }
     }
 
     private void DestroyBall()

@@ -11,16 +11,21 @@ public class GameManager : MonoBehaviour {
     public Transform cameraTransform;
     public AudioSource throwAudioSource;
 
-
     private Vector2 startSwipePosition;
     private float startSwipeTime;
     private bool ballThrowingDisable;
 
-
     public RectTransform captureMonsterHolder;
     public CapturedMonsterUI capturedMonsterUIPrefab;
 
-   
+
+    void Awake()
+    {
+        foreach (Transform child in captureMonsterHolder.transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -52,14 +57,6 @@ public class GameManager : MonoBehaviour {
         } 
     }
 
-    private void Awake()
-    {
-        foreach (Transform child in captureMonsterHolder.transform)
-        {
-            Destroy(child.gameObject);
-        }
-    }
-
     private void ThrowBall(float velocity)
     {
         var position = cameraTransform.position + (cameraTransform.forward * 0.5f);
@@ -71,9 +68,9 @@ public class GameManager : MonoBehaviour {
             Mathf.Deg2Rad * angleCorrection, 0);
 
         ballRigidBody.velocity = direction * velocity * velocityFactor;
-
         ballThrowingDisable = true;
         throwAudioSource.Play();
+
     }
 
     public void BallDestroyed()
